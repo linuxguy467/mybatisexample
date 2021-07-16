@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="/Users/matthemingway/IdeaProjects/mybatisexample/MyBatis/h2-1.4.200.jar"/>
+
+    <context id="H2EmbeddedContext" targetRuntime="MyBatis3" defaultModelType="flat">
+        <jdbcConnection driverClass="org.h2.Driver"
+                        connectionURL="jdbc:h2:~/employee"
+                        userId="sa"
+                        password="">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="codes.matthem.mybatisexample.models"
+                            targetProject="/Users/matthemingway/IdeaProjects/mybatisexample/src/main/java">
+            <property name="constructorBased" value="true"/>
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="codes.matthem.mybatisexample.mappers"
+                         targetProject="/Users/matthemingway/IdeaProjects/mybatisexample/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="codes.matthem.mybatisexample.mappers"
+                             targetProject="/Users/matthemingway/IdeaProjects/mybatisexample/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="%">
+
+        </table>
+    </context>
+</generatorConfiguration>
